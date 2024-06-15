@@ -1,8 +1,8 @@
 from datetime import date
 
 users: list[dict] = [
-    {"name": "Grzegorz", "surname": "Gal", "watched movies": 3, "company": "Netflix"},
-    {"name": "Kamil", "surname": "Gil", "watched movies": 9, "company": "Prime Videos"}
+    {"name": "Grzegorz", "surname": "Gal", "count": 3, "company": "Netflix"},
+    {"name": "Kamil", "surname": "Gil", "count": 9, "company": "Prime Videos"}
 ]
 
 companies: list[dict] = [

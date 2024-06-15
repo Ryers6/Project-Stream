@@ -1,12 +1,12 @@
 from models.data import users
-from utils.crud import show_users
+from utils.crud import show_users, add_new_user
 
 
 def login_system():
     print("Zaloguj się do systemu")
     username = input("Podaj login: ")
     password = input("Podaj hasło: ")
-    if username == "1" and password == "1":
+    if username == "" and password == "":
         print("Logowanie udane!")
         return True
     else:
@@ -44,3 +44,5 @@ if __name__ == "__main__":
                 break
             if menu_option == "1":
                 show_users(users)
+            if menu_option == "2":
+                add_new_user(users)
