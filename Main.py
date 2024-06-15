@@ -1,5 +1,5 @@
 from models.data import users
-from utils.crud import show_users, add_new_user
+from utils.crud import show_users, add_new_user, delete_user
 
 
 def login_system():
@@ -46,3 +46,5 @@ if __name__ == "__main__":
                 show_users(users)
             if menu_option == "2":
                 add_new_user(users)
+            if menu_option == "3":
+                delete_user(users)

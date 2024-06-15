@@ -13,4 +13,7 @@ def add_new_user(users: list) -> None:
     users.append(new_user)
 
 def delete_user(users: list) -> None:
-    user_name =
+    user_name = input("Kogo szukasz?: ")
+    for user in users:
+        if user["name"] == user_name:
+            users.remove(user)
