@@ -28,12 +28,12 @@ def update_user(users: list) -> None:
             user['company'] = input("Platforma?: ")
             break
 
-def show_companies(companies_list: list[dict]) -> None:
+def show_company(companies_list: list[dict]) -> None:
     for company in companies_list:
-        print(f"{company['name']}, liczba użytkowników:{company['number of users']}")
+        print(f"{company['name']}, liczba użytkowników: {company['number of users']}")
 
-def add_new_company(companies: list) -> None:
-    company_name = input("Wprowadź nazwę firmy: ")
-    comapny_NOU = input("Ile posiada użytkowników: ")
-    new_company = {"name": company_name, "number of users": comapny_NOU}
+def add_new_company(companies: list):
+    new_company_name = input("Wprowadź nazwę firmy: ")
+    comapny_NOU = input("Ile użytkowników: ")
+    new_company = {"name": new_company_name, "number of users": comapny_NOU}
     companies.append(new_company)
