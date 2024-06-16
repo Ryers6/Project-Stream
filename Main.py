@@ -2,7 +2,8 @@ from models.data import users, companies, employees, subscribers
 from utils.crud import (show_users, add_new_user, delete_user, update_user,
                         show_company, add_new_company, delete_company,
                         update_company, show_employees, add_new_employee,
-                        delete_employee, update_employee)
+                        delete_employee, update_employee, show_company_users,
+                        show_company_employees, show_client_subscriptions)
 
 
 def login_system():
@@ -69,3 +70,9 @@ if __name__ == "__main__":
                 delete_employee(employees)
             if menu_option == "12":
                 update_employee(employees)
+            if menu_option == "13":
+                show_company_users(users)
+            if menu_option == "14":
+                show_company_employees(employees)
+            if menu_option == "15":
+                show_client_subscriptions(subscribers)
