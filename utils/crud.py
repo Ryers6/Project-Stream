@@ -37,3 +37,10 @@ def add_new_company(companies: list):
     comapny_NOU = input("Ile użytkowników: ")
     new_company = {"name": new_company_name, "number of users": comapny_NOU}
     companies.append(new_company)
+
+def delete_company(companies: list) -> None:
+    company_name = input("Której firmy szukasz?: ")
+    for company in companies:
+        if company['name'] == company_name:
+            companies.remove(company)
+

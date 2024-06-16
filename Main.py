@@ -1,5 +1,6 @@
 from models.data import users, companies, employees, subscribers
-from utils.crud import show_users, add_new_user, delete_user, update_user, show_company, add_new_company
+from utils.crud import (show_users, add_new_user, delete_user, update_user,
+                        show_company, add_new_company, delete_company,)
 
 
 def login_system():
@@ -54,3 +55,5 @@ if __name__ == "__main__":
                 show_company(companies)
             if menu_option == "6":
                 add_new_company(companies)
+            if menu_option == "7":
+                delete_company(companies)
