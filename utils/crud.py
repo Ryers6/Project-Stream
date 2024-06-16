@@ -64,3 +64,21 @@ def add_new_employee(employees: list) -> None:
     new_employee_company = input("W jakiej firmie bedzie pracowac?: ")
     new_employee = {'name': new_employee_name, 'surname': new_employee_surname, 'position': new_employee_position, 'company': new_employee_company}
     employees.append(new_employee)
+
+def delete_employee(employees: list) -> None:
+    employee_name = input("Którego pracownika szukasz? (imię i nazwisko): ")
+    for employee in employees:
+        if f"{employee['name']} {employee['surname']}" == employee_name:
+            employees.remove(employee)
+
+def update_employee(employees: list) -> None:
+    employee_name = input("Którego pracownika chcesz zaktualizować? (imię i nazwisko): ")
+    for employee in employees:
+        if f"{employee['name']} {employee['surname']}" == employee_name:
+            employee['name'] = input("Wprowadź nowe imię pracownika: ")
+            employee['surname'] = input("Wprowadź nowe nazwisko pracownika: ")
+            employee['position'] = input("Wprowadź nowe stanowisko pracownika: ")
+            employee['company'] = input("Wprowadź nową platformę?: ")
+            break
+
+
