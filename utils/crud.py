@@ -50,7 +50,7 @@ def update_company(companies: list) -> None:
     for company in companies:
         if company['name'] == company_name:
             company['name'] = input("Wprowadź nową nazwę firmy: ")
-            company['numbers of users'] = input("Wprowadź nową liczbę użytkowników: ")
+            company['number of users'] = input("Wprowadź nową liczbę użytkowników: ")
             break
 
 def show_employees(employees_list: list[dict]) -> None:
