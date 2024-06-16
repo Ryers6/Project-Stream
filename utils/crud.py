@@ -13,7 +13,18 @@ def add_new_user(users: list) -> None:
     users.append(new_user)
 
 def delete_user(users: list) -> None:
-    user_name = input("Kogo szukasz?: ")
+    user_name = input("Kogo szukasz? (imię i nazwisko): ")
     for user in users:
-        if user["name"] == user_name:
+        if f"{user['name']} {user['surname']}" == user_name:
             users.remove(user)
+
+def update_user(users: list) -> None:
+    user_name = input("Kogo szukasz? (imię i nazwisko): ")
+    for user in users:
+        if f"{user['name']} {user['surname']}" == user_name:
+            user['name'] = input("Wprowadź nowe imię: ")
+            user['surname'] = input("Wprowadź nowe nazwisko: ")
+            user['count'] = input("Wprowadź aktualną liczbę obejrzeń: ")
+            user['company'] = input("Platforma?: ")
+            break
+

@@ -1,5 +1,5 @@
-from models.data import users
-from utils.crud import show_users, add_new_user, delete_user
+from models.data import users, companies, employees, subscribers
+from utils.crud import show_users, add_new_user, delete_user, update_user
 
 
 def login_system():
@@ -48,3 +48,5 @@ if __name__ == "__main__":
                 add_new_user(users)
             if menu_option == "3":
                 delete_user(users)
+            if menu_option == "4":
+                update_user(users)
