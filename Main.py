@@ -1,14 +1,20 @@
+from models.data import users, companies, employees, subscribers
+from utils.crud import show_users, add_new_user, delete_user, update_user
+
+
 def login_system():
     print("Zaloguj się do systemu")
     username = input("Podaj login: ")
     password = input("Podaj hasło: ")
-    if username == "Stream" and password == "ON":
+    if username == "" and password == "":
         print("Logowanie udane!")
         return True
     else:
         print("Błędny login lub hasło.")
         return False
-#login_system()
+
+
+# login_system()
 
 
 if __name__ == "__main__":
@@ -36,3 +42,11 @@ if __name__ == "__main__":
             if menu_option == "0":
                 print("Program kończy pracę.")
                 break
+            if menu_option == "1":
+                show_users(users)
+            if menu_option == "2":
+                add_new_user(users)
+            if menu_option == "3":
+                delete_user(users)
+            if menu_option == "4":
+                update_user(users)
