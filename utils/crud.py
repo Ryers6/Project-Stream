@@ -44,3 +44,12 @@ def delete_company(companies: list) -> None:
         if company['name'] == company_name:
             companies.remove(company)
 
+
+def update_company(companies: list) -> None:
+    company_name = input("Którą firmę chcesz zaktualizować?: ")
+    for company in companies:
+        if company['name'] == company_name:
+            company['name'] = input("Wprowadź nową nazwę firmy: ")
+            company['numbers of users'] = input("Wprowadź nową liczbę użytkowników: ")
+            break
+
