@@ -16,6 +16,6 @@ employees: list[dict] = [
 ]
 
 subscribers: list[dict] = [
-    {"client name": "Kamil", "client surname": "Gil", "service": "Prime Videos", "expiry date": "2024 - 12 - 12"},
-    {"client name": "Grzegorz", "client surname": "Gal", "service": "Netflix", "expiry date": "2025 - 1 - 1"},
+    {"client_name": "Kamil", "client_surname": "Gil", "service": "Prime Videos", "expiry_date": "2024 - 12 - 12"},
+    {"client_name": "Grzegorz", "client_surname": "Gal", "service": "Netflix", "expiry_date": "2025 - 1 - 1"},
 ]

@@ -81,4 +81,20 @@ def update_employee(employees: list) -> None:
             employee['company'] = input("Wprowadź nową platformę?: ")
             break
 
+def show_company_users(users: list[dict]) -> None:
+    company_name = input("Wprowadź nazwę firmy: ")
+    company_users = [user for user in users if user['company'] == company_name]
+    for user in company_users:
+        print(f"Użytkownik: {user['name']} {user['surname']}, obejrzane filmy i seriale: {user['count']}")
 
+def show_company_employees(employees: list[dict]) -> None:
+    company_name = input("Wprowadź nazwę firmy: ")
+    company_employees = [employee for employee in employees if employee['company'] == company_name]
+    for employee in company_employees:
+        print(f"Pracownik: {employee['name']} {employee['surname']} jako {employee['position']}")
+
+def show_client_subscriptions(subscribers: list[dict]) -> None:
+    client_name = input("Wprowadź imię subskrybenta (imię i nazwisko): ")
+    for client in subscribers:
+        if f"{client['client_name']} {client['client_surname']}" == client_name:
+            print(f"Klient: {client['client_name']} {client['client_surname']} posiada subskrypcje: {client['service']} do {client['expiry_date']}")
