@@ -32,3 +32,8 @@ def show_companies(companies_list: list[dict]) -> None:
     for company in companies_list:
         print(f"{company['name']}, liczba użytkowników:{company['number of users']}")
 
+def add_new_company(companies: list) -> None:
+    company_name = input("Wprowadź nazwę firmy: ")
+    comapny_NOU = input("Ile posiada użytkowników: ")
+    new_company = {"name": company_name, "number of users": comapny_NOU}
+    companies.append(new_company)
