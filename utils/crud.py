@@ -28,3 +28,7 @@ def update_user(users: list) -> None:
             user['company'] = input("Platforma?: ")
             break
 
+def show_companies(companies_list: list[dict]) -> None:
+    for company in companies_list:
+        print(f"{company['name']}, liczba użytkowników:{company['number of users']}")
+
