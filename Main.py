@@ -10,15 +10,12 @@ def login_system():
     print("Zaloguj się do systemu")
     username = input("Podaj login: ")
     password = input("Podaj hasło: ")
-    if username == "" and password == "":
+    if username == "stream" and password == "on":
         print("Logowanie udane!")
         return True
     else:
         print("Błędny login lub hasło.")
         return False
-
-
-# login_system()
 
 
 if __name__ == "__main__":
