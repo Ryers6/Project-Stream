@@ -1,27 +1,27 @@
 from datetime import date
 
 users: list[dict] = [
-    {"name": "Grzegorz", "surname": "Gal", "count": 3, "company": "Netflix"},
-    {"name": "Kamil", "surname": "Gil", "count": 9, "company": "Prime Videos"},
-    {"name": "Maciej", "surname": "Galant", "count": 12, "company": "YouTube"},
-    {"name": "Piotr", "surname": "Frątczak", "count": 7, "company": "Prime Videos"},
-    {"name": "Marek", "surname": "Dybowski", "count": 1, "company": "Netflix"}
+    {"name": "Grzegorz", "surname": "Gal", "count": 3, "company": "Netflix", "location": "Nowy Targ"},
+    {"name": "Kamil", "surname": "Gil", "count": 9, "company": "Prime Videos", "location": "Katowice"},
+    {"name": "Maciej", "surname": "Galant", "count": 12, "company": "YouTube", "location": "Kutno"},
+    {"name": "Piotr", "surname": "Frątczak", "count": 7, "company": "Prime Videos", "location": "Łódź"},
+    {"name": "Marek", "surname": "Dybowski", "count": 1, "company": "Netflix", "location": "Gdynia"}
 ]
 
 companies: list[dict] = [
-    {"name": "Netflix", "number of users": 256},
-    {"name": "Prime Videos", "number of users": 144},
-    {"name": "YouTube", "number of users": 1214},
-    {"name": "HBO", "number of users": 1989},
-    {"name": "StreamON", "number of users": 23655}
+    {"name": "Netflix", "number of users": 256, "location": "Warszawa"},
+    {"name": "Prime Videos", "number of users": 144, "location": "Gdynia"},
+    {"name": "YouTube", "number of users": 1214, "location": "Kraków"},
+    {"name": "HBO", "number of users": 1989, "location": "Kielce"},
+    {"name": "StreamON", "number of users": 23655, "location": "Poznań"}
 ]
 
 employees: list[dict] = [
-    {"name": "Maciej", "surname": "Galant", "position": "dealer", "company": "Netflix"},
-    {"name": "Piotr", "surname": "Frątczak", "position": "manager", "company": "Prime Videos"},
-    {"name": "Grzegorz", "surname": "Gal", "position": "boss", "company": "HBO"},
-    {"name": "Kamil", "surname": "Gil", "position": "producer", "company": "Prime Videos"},
-    {"name": "Marek", "surname": "Dybowski", "position": "executive producer", "company": "YouTube"}
+    {"name": "Maciej", "surname": "Galant", "position": "dealer", "company": "Netflix", "location": "Kraków"},
+    {"name": "Piotr", "surname": "Frątczak", "position": "manager", "company": "Prime Videos", "location": "Warszawa"},
+    {"name": "Grzegorz", "surname": "Gal", "position": "boss", "company": "HBO", "location": "Katowice"},
+    {"name": "Kamil", "surname": "Gil", "position": "producer", "company": "Prime Videos", "location": "Gdańsk"},
+    {"name": "Marek", "surname": "Dybowski", "position": "executive producer", "company": "YouTube", "location": "Dęblin"},
 ]
 
 subscribers: list[dict] = [

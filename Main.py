@@ -3,7 +3,8 @@ from utils.crud import (show_users, add_new_user, delete_user, update_user,
                         show_company, add_new_company, delete_company,
                         update_company, show_employees, add_new_employee,
                         delete_employee, update_employee, show_company_users,
-                        show_company_employees, show_client_subscriptions)
+                        show_company_employees, show_client_subscriptions,
+                        map_all_companies, map_all_users, map_all_employees)
 
 
 def login_system():
@@ -16,9 +17,6 @@ def login_system():
     else:
         print("Błędny login lub hasło.")
         return False
-
-
-# login_system()
 
 
 if __name__ == "__main__":
@@ -41,6 +39,9 @@ if __name__ == "__main__":
             print("13. Wyświetl użytkowników danej firmy")
             print("14. Wyświetl pracowników danej firmy")
             print("15. Wyświetl subskrypcje danego klienta")
+            print("16. Wyświetl mapę wszystkich firm streamingowych")
+            print("17. Wyświetl mapę wszystkich użytkowników)")
+            print("18. Wyświetl mapę wszystkich pracowników)")
 
             menu_option: str = input("Dokonaj wyboru:")
             if menu_option == "0":
@@ -76,3 +77,9 @@ if __name__ == "__main__":
                 show_company_employees(employees)
             if menu_option == "15":
                 show_client_subscriptions(subscribers)
+            if menu_option == "16":
+                map_all_companies(companies)
+            if menu_option == "17":
+                map_all_users(users)
+            if menu_option == "18":
+                map_all_employees(employees)
