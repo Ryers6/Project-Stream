@@ -40,8 +40,8 @@ if __name__ == "__main__":
             print("14. Wyświetl pracowników danej firmy")
             print("15. Wyświetl subskrypcje danego klienta")
             print("16. Wyświetl mapę wszystkich firm streamingowych")
-            print("17. Wyświetl mapę wszystkich użytkowników)")
-            print("18. Wyświetl mapę wszystkich pracowników)")
+            print("17. Wyświetl mapę wszystkich użytkowników")
+            print("18. Wyświetl mapę wszystkich pracowników")
 
             menu_option: str = input("Dokonaj wyboru:")
             if menu_option == "0":

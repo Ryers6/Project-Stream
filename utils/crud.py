@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 def show_users(users_list: list[dict]) -> None:
     for user in users_list:
         print(
-            f"{user['name']} {user['surname']}, obejrzane filmy i seriale: {user['count']} na {user['company']}")
+            f"{user['name']} {user['surname']}, obejrzane filmy i seriale: {user['count']} na {user['company']}, mieszka w {user['location']}")
 
 
 def add_new_user(users: list) -> None:
@@ -14,7 +14,8 @@ def add_new_user(users: list) -> None:
     new_surname = input("Wprowadź nazwisko: ")
     new_count = input("Ile filmów i seriali obejrzałaś/eś?: ")
     company = input("Platforma?: ")
-    new_user = {"name": new_name, "surname": new_surname, "count": new_count, "company": company}
+    location = input("Gdzie mieszkasz?: ")
+    new_user = {"name": new_name, "surname": new_surname, "count": new_count, "company": company, "location": location}
     users.append(new_user)
 
 
@@ -33,18 +34,20 @@ def update_user(users: list) -> None:
             user['surname'] = input("Wprowadź nowe nazwisko: ")
             user['count'] = input("Wprowadź aktualną liczbę obejrzeń: ")
             user['company'] = input("Platforma?: ")
+            user['location'] = input("Gdzie mieszkasz?: ")
             break
 
 
 def show_company(companies_list: list[dict]) -> None:
     for company in companies_list:
-        print(f"{company['name']}, liczba użytkowników: {company['number of users']}")
+        print(f"{company['name']}, liczba użytkowników: {company['number of users']}, miejscowość: {company['location']}")
 
 
 def add_new_company(companies: list) -> None:
     new_company_name = input("Wprowadź nazwę firmy: ")
     comapny_NOU = input("Ile użytkowników: ")
-    new_company = {"name": new_company_name, "number of users": comapny_NOU}
+    new_company_location = input("Gdzie znajduje się firma?: ")
+    new_company = {"name": new_company_name, "number of users": comapny_NOU, "location": new_company_location}
     companies.append(new_company)
 
 
@@ -61,12 +64,13 @@ def update_company(companies: list) -> None:
         if company['name'] == company_name:
             company['name'] = input("Wprowadź nową nazwę firmy: ")
             company['number of users'] = input("Wprowadź nową liczbę użytkowników: ")
+            company['location'] = input("Gdzie znajduje się firma?: ")
             break
 
 
 def show_employees(employees_list: list[dict]) -> None:
     for employee in employees_list:
-        print(f"{employee['name']} {employee['surname']} jako {employee['position']} w {employee['company']}")
+        print(f"{employee['name']} {employee['surname']} jako {employee['position']} w {employee['company']}, w miejscowości {employee['location']}")
 
 
 def add_new_employee(employees: list) -> None:
@@ -74,8 +78,9 @@ def add_new_employee(employees: list) -> None:
     new_employee_surname = input("Wprowadź nazwisko: ")
     new_employee_position = input("Wprowadź stanowisko pracownika: ")
     new_employee_company = input("W jakiej firmie bedzie pracowac?: ")
+    new_employee_location = input("Gdzie mieszka?: ")
     new_employee = {'name': new_employee_name, 'surname': new_employee_surname, 'position': new_employee_position,
-                    'company': new_employee_company}
+                    'company': new_employee_company, 'location': new_employee_location}
     employees.append(new_employee)
 
 
@@ -94,6 +99,7 @@ def update_employee(employees: list) -> None:
             employee['surname'] = input("Wprowadź nowe nazwisko pracownika: ")
             employee['position'] = input("Wprowadź nowe stanowisko pracownika: ")
             employee['company'] = input("Wprowadź nową platformę?: ")
+            employee['location'] = input("Wprowadź nowe miejsce zamieszkania: ")
             break
 
 
@@ -101,14 +107,14 @@ def show_company_users(users: list[dict]) -> None:
     company_name = input("Wprowadź nazwę firmy: ")
     company_users = [user for user in users if user['company'] == company_name]
     for user in company_users:
-        print(f"Użytkownik: {user['name']} {user['surname']}, obejrzane filmy i seriale: {user['count']}")
+        print(f"Użytkownik: {user['name']} {user['surname']}, obejrzane filmy i seriale: {user['count']}, mieszka w: {user['location']}")
 
 
 def show_company_employees(employees: list[dict]) -> None:
     company_name = input("Wprowadź nazwę firmy: ")
     company_employees = [employee for employee in employees if employee['company'] == company_name]
     for employee in company_employees:
-        print(f"Pracownik: {employee['name']} {employee['surname']} jako {employee['position']}")
+        print(f"Pracownik: {employee['name']} {employee['surname']} jako {employee['position']}, mieszka w: {employee['location']}")
 
 
 def show_client_subscriptions(subscribers: list[dict]) -> None:
@@ -117,6 +123,7 @@ def show_client_subscriptions(subscribers: list[dict]) -> None:
         if f"{client['client_name']} {client['client_surname']}" == client_name:
             print(
                 f"Klient: {client['client_name']} {client['client_surname']} posiada subskrypcje: {client['service']} do {client['expiry_date']}")
+
 
 def map_all_companies(companies):
     map = folium.Map(location=[52, 20], zoom_start=6)
@@ -133,6 +140,7 @@ def map_all_companies(companies):
 
     map.save('models/maps/map_companies.html')
 
+
 def map_all_users(users):
     map = folium.Map(location=[52, 20], zoom_start=6)
     for user in users:
@@ -147,6 +155,7 @@ def map_all_users(users):
                       icon=folium.Icon(color='red')).add_to(map)
 
     map.save('models/maps/map_users.html')
+
 
 def map_all_employees(employees):
     map = folium.Map(location=[52, 20], zoom_start=6)
